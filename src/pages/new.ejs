@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site-PostgreSQL</title>
+  <link rel="stylesheet" href="../scss/global.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__exit">
+      <a href="/">Exit</a>
+    </div>
+  </header>
+  <main class="content">
+    <div class="content__container">
+      <% newsItems.forEach(function(newsItem) { %>
+        <div class="new__block">
+          <div class="new__img">
+            <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
+          </div>
+          <div class="new__title">
+            <h2>
+              <%= newsItem.caption %>
+            </h2>
+          </div>
+          <div class="new__description">
+            <span>
+              <%= newsItem.description %>
+            </span>
+          </div>
+        </div>
+        <% }); %>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site-PostgreSQL</title>
+  <link rel="stylesheet" href="../scss/global.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__exit">
+      <a href="/">Exit</a>
+    </div>
+  </header>
+  <main class="content">
+    <div class="content__container">
+      <% playbillItems.forEach(function(playbillItem) { %>
+        <div class="new__block">
+          <div class="new__img">
+            <img src="<%= playbillItem.photoafisha %>" alt="<%= playbillItem.photoafisha %>">
+          </div>
+          <div class="new__title">
+            <h2>
+              <%= playbillItem.name %>
+            </h2>
+          </div>
+          <div class="new__description">
+            <span>
+              <%= playbillItem.date %>
+            </span>
+          </div>
+          <div class="new__description">
+            <span>
+              <%= playbillItem.description %>
+            </span>
+          </div>
+          <div class="new__description">
+            <span>
+              <%= playbillItem.location %>
+            </span>
+          </div>
+          <div class="new__description">
+            <span>
+              <%= playbillItem.group %>
+            </span>
+          </div>
+          <div class="new__description">
+            <span>
+              <%= playbillItem.teachers %>
+            </span>
+          </div>
+        </div>
+        <% }); %>
+    </div>
+  </main>
+</body>
+
+</html>

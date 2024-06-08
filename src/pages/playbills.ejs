@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site-PostgreSQL</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <ul class="header__menu">
+        <li><a href="/">Новости</a></li>
+        <li><a href="/playbills">Афиши</a></li>
+        <li><a href="/timetable">Расписание</a></li>
+      </ul>
+    </div>
+  </header>
+  <main class="content">
+    <div class="content__container">
+      <section class="content__playbills">
+        <% playbills.forEach(function(playbillItem) { %>
+          <a href="/playbill/<%= playbillItem.id %>">
+            <div class="playbill__block">
+              <div id="<%= playbillItem.id %>" class="playbill__img">
+                <img src="<%= playbillItem.photoafisha %>" alt="<%= playbillItem.photoafisha %>">
+              </div>
+              <div class="playbill__title">
+                <h2>
+                  <%= playbillItem.name %>
+                </h2>
+              </div>
+            </div>
+          </a>
+          <% }); %>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
