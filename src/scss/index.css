@@ -48,3 +48,12 @@
   font-size: 16px;
   font-weight: 800;
 }
+.new__description {
+  margin-top: 10px;
+}
+.new__description span {
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+}
