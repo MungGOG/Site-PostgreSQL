@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site-PostgreSQL</title>
   <link rel="stylesheet" href="../scss/global.css">
+  <link rel="stylesheet" href="../scss/playbill.css">
 </head>
 
 <body>
@@ -17,36 +18,36 @@
   <main class="content">
     <div class="content__container">
       <% playbillItems.forEach(function(playbillItem) { %>
-        <div class="new__block">
-          <div class="new__img">
+        <div class="playbill__block">
+          <div class="playbill__img">
             <img src="<%= playbillItem.photoafisha %>" alt="<%= playbillItem.photoafisha %>">
           </div>
-          <div class="new__title">
+          <div class="playbill__title">
             <h2>
               <%= playbillItem.name %>
             </h2>
           </div>
-          <div class="new__description">
+          <div class="playbill__date">
             <span>
               <%= playbillItem.date %>
             </span>
           </div>
-          <div class="new__description">
+          <div class="playbill__description">
             <span>
               <%= playbillItem.description %>
             </span>
           </div>
-          <div class="new__description">
+          <div class="playbill__location">
             <span>
               <%= playbillItem.location %>
             </span>
           </div>
-          <div class="new__description">
+          <div class="playbill__group">
             <span>
               <%= playbillItem.group %>
             </span>
           </div>
-          <div class="new__description">
+          <div class="playbill__teachers">
             <span>
               <%= playbillItem.teachers %>
             </span>

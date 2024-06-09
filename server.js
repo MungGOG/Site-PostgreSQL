@@ -18,11 +18,11 @@ app.use(cors())
 const { Client } = pg;
 
 const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: '14881488',
-  port: 5432,
+  user: 'postgres', // username 
+  host: 'localhost', // host. if you will work on locally DB, you writes "localhost"
+  database: 'postgres', // name DB
+  password: '14881488', // password DB
+  port: 5432, // Port DB
 })
 
 app.get('/', async (req, res) => {
@@ -30,7 +30,7 @@ app.get('/', async (req, res) => {
     const result = await client.query('SELECT * FROM news')
     const news = result.rows
 
-    res.render('index', { news })
+    res.render('news', { news })
   } catch (err) {
     console.error('Database connection error', err.stack)
   }
@@ -49,10 +49,10 @@ app.get('/playbills', async (req, res) => {
 
 app.get('/timetable', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM time')
-    const time = result.rows
+    const result = await client.query('SELECT * FROM playbill')
+    const playbills = result.rows
 
-    res.render('timetable', { time })
+    res.render('timetable', { playbills })
   } catch (err) {
     console.error('Database connection error', err.stack)
   }

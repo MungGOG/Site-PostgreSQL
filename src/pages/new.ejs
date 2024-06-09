@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site-PostgreSQL</title>
   <link rel="stylesheet" href="../scss/global.css">
-  <link rel="stylesheet" href="../scss/index.css">
+  <link rel="stylesheet" href="../scss/new.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
       <% newsItems.forEach(function(newsItem) { %>
         <div class="new__block">
           <div class="new__img">
-            <img src="../img/fullstack.jpg" alt="<%= newsItem.photo %>">
+            <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
           </div>
           <div class="new__title">
             <h2>

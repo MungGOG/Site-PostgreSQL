@@ -23,18 +23,18 @@
     <div class="content__container">
       <section class="content__news">
         <% news.forEach(function(newsItem) { %>
-          <a href="/new/<%= newsItem.id %>">
-            <div class="new__block">
-              <div id="<%= newsItem.id %>" class="new__img">
-                <img src="../img/fullstack.jpg" alt="<%= newsItem.photo %>">
-              </div>
-              <div class="new__title">
-                <h2>
-                  <%= newsItem.caption %>
-                </h2>
-              </div>
+          <div class="new__block">
+            <a href="/new/<%= newsItem.id %>">
+            <div id="<%= newsItem.id %>" class="new__img">
+              <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
             </div>
-          </a>
+            <div class="new__title">
+              <h2>
+                <%= newsItem.caption %>
+              </h2>
+            </div>
+            </a>
+          </div>
           <% }); %>
       </section>
     </div>
