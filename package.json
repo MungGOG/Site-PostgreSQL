@@ -15,6 +15,7 @@
   "author": "Cebastion <kdimon2006@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   }
 }
