@@ -21,22 +21,28 @@
   </header>
   <main class="content">
     <div class="content__container">
+      <h1 class="news__title">Новости театра</h1>
       <section class="content__news">
         <% news.forEach(function(newsItem) { %>
           <div class="new__block">
             <a href="/new/<%= newsItem.id %>">
-            <div id="<%= newsItem.id %>" class="new__img">
-              <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
-            </div>
-            <div class="new__title">
-              <h2>
-                <%= newsItem.caption %>
-              </h2>
-            </div>
+              <div id="<%= newsItem.id %>" class="new__img">
+                <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
+              </div>
+              <div class="new__title">
+                <h2>
+                  <%= newsItem.caption %>
+                </h2>
+              </div>
             </a>
           </div>
           <% }); %>
       </section>
+      <div class="news__button__row">
+        <button class="news__button">
+          Загрузить еще
+        </button>
+      </div>
     </div>
   </main>
 </body>

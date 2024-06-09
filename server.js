@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'src')))
 
 app.use(cors())
 
-const { Client } = pg;
+const { Client } = pg
 
 const client = new Client({
   user: 'postgres', // username 
@@ -49,10 +49,10 @@ app.get('/playbills', async (req, res) => {
 
 app.get('/timetable', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM playbill')
-    const playbills = result.rows
+    const result = await client.query('SELECT * FROM schedule')
+    const schedules = result.rows
 
-    res.render('timetable', { playbills })
+    res.render('timetable', { schedules })
   } catch (err) {
     console.error('Database connection error', err.stack)
   }
@@ -61,10 +61,10 @@ app.get('/timetable', async (req, res) => {
 app.get('/new/:id', async (req, res) => {
   const id = req.params.id
   try {
-    const result = await client.query(`SELECT * FROM news WHERE id = $1`, [id]);
-    const newsItems = result.rows;
+    const result = await client.query(`SELECT * FROM news WHERE id = $1`, [id])
+    const newsItems = result.rows
 
-    res.render('new', { newsItems });
+    res.render('new', { newsItems })
   } catch (err) {
     console.error('Database connection error', err.stack)
   }
@@ -73,10 +73,18 @@ app.get('/new/:id', async (req, res) => {
 app.get('/playbill/:id', async (req, res) => {
   const id = req.params.id
   try {
-    const result = await client.query(`SELECT * FROM playbill WHERE id = $1`, [id]);
-    const playbillItems = result.rows;
+    const result = await client.query(`SELECT * FROM playbill WHERE id = $1`, [id])
+    const playbillItems = result.rows
+    const teachersResult = await client.query(`
+    SELECT playbill.*, teachers.*
+    FROM playbill
+    INNER JOIN teachers ON playbill.teachers = teachers.id
+    WHERE playbill.id = $1
+`, [id])
 
-    res.render('playbill', { playbillItems });
+    const teachers = teachersResult.rows
+
+    res.render('playbill', { playbillItems, teachers })
   } catch (err) {
     console.error('Database connection error', err.stack)
   }
@@ -84,11 +92,11 @@ app.get('/playbill/:id', async (req, res) => {
 
 app.listen(3000, async () => {
   try {
-    await client.connect();
-    console.log('Database connected successfully');
+    await client.connect()
+    console.log('Database connected successfully')
   } catch (error) {
-    console.error('Error connecting to database:', error.stack);
-    await client.end();
-    process.exit(1);
+    console.error('Error connecting to database:', error.stack)
+    await client.end()
+    process.exit(1)
   }
 })

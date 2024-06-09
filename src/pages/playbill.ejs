@@ -12,29 +12,31 @@
 <body>
   <header class="header">
     <div class="header__exit">
-      <a href="/">Exit</a>
+      <a href="/playbills">
+        <svg role="presentation" class="t-popup__close-icon" width="15" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L10 10L1 19" stroke="#000000" stroke-width="2"></path></svg>
+      </a>
     </div>
   </header>
   <main class="content">
     <div class="content__container">
       <% playbillItems.forEach(function(playbillItem) { %>
         <div class="playbill__block">
-          <div class="playbill__img">
-            <img src="<%= playbillItem.photoafisha %>" alt="<%= playbillItem.photoafisha %>">
-          </div>
           <div class="playbill__title">
             <h2>
               <%= playbillItem.name %>
             </h2>
           </div>
-          <div class="playbill__date">
-            <span>
-              <%= playbillItem.date %>
-            </span>
+          <div class="playbill__img">
+            <img src="<%= playbillItem.photoafisha %>" alt="<%= playbillItem.photoafisha %>">
           </div>
           <div class="playbill__description">
             <span>
               <%= playbillItem.description %>
+            </span>
+          </div>
+          <div class="playbill__date">
+            <span>
+              <%= playbillItem.date %>
             </span>
           </div>
           <div class="playbill__location">
@@ -49,7 +51,9 @@
           </div>
           <div class="playbill__teachers">
             <span>
-              <%= playbillItem.teachers %>
+              <% teachers.forEach(function(teacher) { %> 
+                <%= teacher.surname %>
+              <% }); %>
             </span>
           </div>
         </div>

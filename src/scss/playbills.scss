@@ -1,15 +1,21 @@
+html, body{
+  background-color: #000;
+}
 .header {
-  margin-top: 50px;
+  background-color: #000;
+  padding-top: 30px;
+  padding-bottom: 10px;
 
   &__menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     & li a {
-      color: #000;
-      font-size: 16px;
-      font-weight: 800;
+      font-family: Roboto;
+      font-size: 21px;
+    color: #ffffff;
+    font-weight: 600;
     }
   }
 
@@ -20,7 +26,7 @@
 }
 
 .content{
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .content__playbills{
@@ -36,38 +42,43 @@
 .playbill {
   &__block {
     border-radius: 10px;
-    border: 1px solid #000;
+    background-color: #ffffff;
     margin: 10px 10px 0 10px;
-    max-width: 310px;
-    max-height: 310px;
+    max-width: 260px;
     width: 100%;
     height: 100%;
-    padding: 10px;
   }
 
   &__img{
     img{
       width: 100%;
     height: 100%;
+    max-height: 345px;
     object-fit: cover;
     object-position: center;
     }
   }
 
   &__title {
+    padding: 0 10px;
     h2{
-      text-align: center;
-      color: #000;
-    font-size: 16px;
+      font-family: Roboto;
+      color: #ff8562;
+    font-size: 20px;
     font-weight: 800;
+    font-weight: 600;
+    letter-spacing: 2.5px;
     }
   }
 
-  &__date{
+  &__description{
+    padding: 0 10px;
     span{
-      color: #000;
-    font-size: 16px;
-    font-weight: 800;
+      font-size: 20px;
+    color: #000000;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.55;
     }
   }
 }

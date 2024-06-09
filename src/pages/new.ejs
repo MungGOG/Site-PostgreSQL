@@ -12,20 +12,22 @@
 <body>
   <header class="header">
     <div class="header__exit">
-      <a href="/">Exit</a>
+      <a href="/">
+        <svg role="presentation" class="t-popup__close-icon" width="15" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L10 10L1 19" stroke="#000000" stroke-width="2"></path></svg>
+      </a>
     </div>
   </header>
   <main class="content">
     <div class="content__container">
       <% newsItems.forEach(function(newsItem) { %>
         <div class="new__block">
-          <div class="new__img">
-            <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
-          </div>
           <div class="new__title">
             <h2>
               <%= newsItem.caption %>
             </h2>
+          </div>
+          <div class="new__img">
+            <img src="<%= newsItem.photo %>" alt="<%= newsItem.photo %>">
           </div>
           <div class="new__description">
             <span>
