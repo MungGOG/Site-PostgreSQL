@@ -20,8 +20,8 @@ const { Client } = pg
 const client = new Client({
   user: 'postgres', // username 
   host: 'localhost', // host. if you will work on locally DB, you writes "localhost"
-  database: 'postgres', // name DB
-  password: '14881488', // password DB
+  database: 'Kontext', // name DB
+  password: '123', // password DB
   port: 5432, // Port DB
 })
 

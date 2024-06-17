@@ -26,7 +26,7 @@
         <% schedules.forEach(function(scheduleItem) { %>
           <div id="<%= scheduleItem.id %>" class="schedule__block">
             <div class="schedule__title">
-              <h2><%= scheduleItem.group %></h2>
+              <h2>Группа: <%= scheduleItem.group %></h2>
             </div>
             <div class="schedule__time">
               <span><%= scheduleItem.starttime %> - <%= scheduleItem.endtime %></span>
